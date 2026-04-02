@@ -7,15 +7,17 @@
 
   <!-- Feather Icons -->
   <script src="https://unpkg.com/feather-icons"></script>
+  <!-- Font Awesome for modern icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-    /* Animated White + Light Blue Gradient Background */
+    /* White to Light Blue Gradient Background */
     body {
       margin: 0;
       font-family: "Inter", sans-serif;
-      background: linear-gradient(120deg, #ffffff, #e8f4ff, #d9edff);
-      background-size: 300% 300%;
-      animation: gradientShift 12s ease infinite;
+      background: linear-gradient(135deg, #ffffff, #d9edff);
+      background-size: 400% 400%;
+      animation: gradientShift 20s ease infinite;
       color: #1a1a1a;
       line-height: 1.6;
     }
@@ -26,247 +28,151 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Fade-in Animation */
-    .fade {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: 0.8s ease;
-    }
-    .fade.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 50px 20px;
     }
 
-    /* Container */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+    /* Fade-in animation */
+    .fade { opacity: 0; transform: translateY(20px); transition: 0.8s ease; }
+    .fade.visible { opacity: 1; transform: translateY(0); }
 
     /* Header */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 50px;
-    }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; }
+    nav a { margin-left: 25px; text-decoration: none; color: #2563ebcc; font-size: 16px; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: #1e40af; }
 
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #6b7280;
-      font-size: 15px;
-      transition: 0.25s;
-    }
-
-    nav a:hover {
-      color: #2563eb;
-    }
-
-    /* Profile Section */
-    .profile {
-      display: flex;
-      align-items: flex-start;
-      gap: 25px;
-      margin-bottom: 60px;
-    }
-
+    /* Profile */
+    .profile { display: flex; align-items: center; gap: 30px; margin-bottom: 70px; }
     .profile img {
-  width: 180px;
-  height: 180px;
-  min-width: 180px;        /* prevents shrinking in flex */
-  min-height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  flex-shrink: 0;          /* 🔥 important inside flexbox */
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
-}
-    .profile img:hover {
-      transform: scale(1.03);
+      width: 180px; height: 180px; border-radius: 50%;
+      object-fit: cover; flex-shrink: 0;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .profile img:hover { transform: scale(1.05); box-shadow: 0 12px 35px rgba(0,0,0,0.25); }
+    .profile h1 { margin: 0; font-size: 2.5rem; font-weight: 700; color: #1e3a8a; }
+    .profile h3 { margin: 15px 0 20px; color: #1e40af; font-weight: 500; font-size: 1.1rem; }
 
-    .profile h1 {
-      margin: 0;
-      font-size: 2.2rem;
-      font-weight: 700;
-    }
-
-    .profile h3 {
-      margin: 15px 0 15px;
-      color: #4b5563;
-      font-weight: 500;
-    }
-
-    /* Modern Small Skill Tags */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
+    /* Skill Tags */
+    .skills-list { display: flex; flex-wrap: wrap; gap: 12px; }
     .skills-list span {
-      background: rgba(255, 255, 255, 0.7);
-      padding: 4px 10px;
-      border-radius: 8px;
-      font-size: 0.8rem;
+      background: rgba(255,255,255,0.7);
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 0.85rem;
       color: #2563eb;
-      border: 1px solid rgba(37, 99, 235, 0.15);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      transition: 0.25s ease;
+      border: 1px solid rgba(37,99,235,0.3);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     }
-
-    .skills-list span:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      background: white;
-    }
+    .skills-list span:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); background: rgba(255,255,255,0.85); }
 
     /* Section Titles */
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 10px;
-    }
-
-    .muted {
-      color: #6b7280;
-      margin-bottom: 20px;
-    }
+    h2 { font-size: 1.8rem; margin-bottom: 12px; color: #1e3a8a; }
+    .muted { color: #2563eb; margin-bottom: 20px; }
 
     /* Cards */
     .card {
-      background: white;
-      padding: 16px;
-      border-radius: 12px;
-      font-size: 0.95rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-      margin-bottom: 16px;
-      transition: 0.25s ease;
+      background: rgba(255,255,255,0.85); padding: 18px; border-radius: 16px; font-size: 1rem;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1); margin-bottom: 18px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      color: #1e3a8a;
+      backdrop-filter: blur(8px);
     }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
     /* Contact Icons */
     .contact a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: #2563eb;
-      font-size: 1rem;
-      margin-right: 20px;
-      transition: 0.25s;
+      display: inline-flex; align-items: center; gap: 10px;
+      text-decoration: none; color: #2563ebcc; font-size: 1.05rem; margin-right: 20px;
+      transition: opacity 0.3s ease;
     }
-
-    .contact a:hover {
-      opacity: 0.7;
-    }
+    .contact a:hover { opacity: 0.8; }
 
     /* Footer */
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #6b7280;
-      font-size: 14px;
-    }
+    footer { text-align: center; margin-top: 50px; color: #2563ebaa; font-size: 14px; }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
+<div class="container">
+  <!-- Header -->
+  <header class="fade">
+    <nav>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#Future Projects">Future Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <!-- Header -->
-    <header class="fade">
-      <strong style="font-size: 18px;"></strong>
-      <nav>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#Future Projects">Future Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+  <!-- Profile -->
+  <section class="profile fade">
+    <img src="profile.jpg" alt="Muhammad Husaam">
+    <div>
+      <h1>Muhammad Husaam</h1>
+      <h3>IT Support Specialist / Google Certified IT Support Professional</h3>
 
-    <!-- Profile -->
-    <section class="profile fade">
-      <img src="logo.png" alt="Muhammad Husaam">
-
-      <div>
-        <h1>Muhammad Husaam</h1>
-        <h3>IT Support Specialist / Google Certified IT Support Professional</h3>
-
-        <div class="skills-list">
-          <span>Troubleshooting Windows, Linux & macOS </span>
-          <span>Networking ( IP addressing, DNS, DHCP, VPNs )</span>
-          <span>PowerShell Automation</span>
-          <span>System Administration & Active Directory </span>
-          <span>Network Security</span>
-        </div>
+      <div class="skills-list">
+        <span><i class="fa-solid fa-desktop"></i> Troubleshooting</span>
+        <span><i class="fa-solid fa-network-wired"></i> Networking</span>
+        <span><i class="fa-solid fa-terminal"></i> PowerShell</span>
+        <span><i class="fa-solid fa-server"></i> System Admin</span>
+        <span><i class="fa-solid fa-shield-halved"></i> Security</span>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Skills -->
-    <section id="skills" class="fade">
-      <h2>Skills</h2>
-      <p class="muted">Core technologies and tools.</p>
+  <!-- Skills -->
+  <section id="skills" class="fade">
+    <h2>Skills</h2>
+    <p class="muted">Core technologies and tools.</p>
+    <div class="card">Operating Systems Windows, Linux, macOS troubleshooting</div>
+    <div class="card">Networking IP addressing, DNS, DHCP, VPNs</div>
+    <div class="card">PowerShell Automation</div>
+    <div class="card">Software Troubleshooting Installation, updates, compatibility issues</div>
+    <div class="card">System Administration User accounts, permissions, Active Directory</div>
+    <div class="card">Security Antivirus, firewalls, phishing awareness</div>
+  </section>
 
-      <div class="card">Operating Systems Windows, Linux, macOS troubleshooting</div>
-      <div class="card">Networking IP addressing, DNS, DHCP, VPNs</div>
-      <div class="card">PowerShell Automation</div>
-      <div class="card">Software Troubleshooting Installation, updates, compatibility issues</div>
-      <div class="card">System Administration User accounts, permissions, Active Directory</div>
-      <div class="card">Security Antivirus, firewalls, phishing awareness</div>
-    </section>
+  <!-- Projects -->
+  <section id="projects" class="fade">
+    <h2>Projects</h2>
+    <p class="muted">Recent work and experiments.</p>
+    <div class="card">
+      <h3>AD User Provisioning Script</h3>
+      <p class="muted">Automated user creation with PowerShell.</p>
+    </div>
+    <div class="card">
+      <h3>Windows Server Home Lab</h3>
+      <p class="muted">Multi‑VM lab for testing and learning.</p>
+    </div>
+  </section>
 
-    <!-- Projects -->
-    <section id="projects" class="fade">
-      <h2>Projects</h2>
-      <p class="muted">Recent work and experiments.</p>
+  <!-- Contact -->
+  <section id="contact" class="fade">
+    <h2>Contact</h2>
+    <p class="muted">Let’s connect.</p>
+    <div class="contact">
+      <a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="https://github.com/muhammad-husaam" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </section>
 
-      <div class="card">
-        <h3>AD User Provisioning Script</h3>
-        <p class="muted">Automated user creation with PowerShell.</p>
-      </div>
+  <footer>© 2026 Muhammad Husaam</footer>
+</div>
 
-      <div class="card">
-        <h3>Windows Server Home Lab</h3>
-        <p class="muted">Multi‑VM lab for testing and learning.</p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="fade">
-      <h2>Contact</h2>
-      <p class="muted">Let’s connect.</p>
-
-      <div class="contact">
-        <a href="mailto:your-email@example.com"><i data-feather="mail"></i>Email</a>
-        <a href="https://github.com/muhammad-husaam" target="_blank"><i data-feather="github"></i>GitHub</a>
-        <a href="https://linkedin.com" target="_blank"><i data-feather="linkedin"></i>LinkedIn</a>
-      </div>
-    </section>
-
-    <footer>© 2026 Muhammad Husaam</footer>
-
-  </div>
-
-  <!-- Activate Icons + Fade Animations -->
-  <script>
-    feather.replace();
-
-    const elements = document.querySelectorAll('.fade');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    });
-    elements.forEach(el => observer.observe(el));
-  </script>
+<script>
+  feather.replace();
+  const elements = document.querySelectorAll('.fade');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  });
+  elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
