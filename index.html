@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Husaam | Portfolio</title>
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    /* Animated White + Light Blue Gradient Background */
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(120deg, #ffffff, #e8f4ff, #d9edff);
+      background-size: 300% 300%;
+      animation: gradientShift 12s ease infinite;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Fade-in Animation */
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.8s ease;
+    }
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #6b7280;
+      font-size: 15px;
+      transition: 0.25s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    /* Profile Section */
+    .profile {
+      display: flex;
+      align-items: flex-start;
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+
+    .profile img {
+  width: 180px;
+  height: 180px;
+  min-width: 180px;        /* prevents shrinking in flex */
+  min-height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;          /* 🔥 important inside flexbox */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+    .profile img:hover {
+      transform: scale(1.03);
+    }
+
+    .profile h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .profile h3 {
+      margin: 15px 0 15px;
+      color: #4b5563;
+      font-weight: 500;
+    }
+
+    /* Modern Small Skill Tags */
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills-list span {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 4px 10px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: #2563eb;
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: 0.25s ease;
+    }
+
+    .skills-list span:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background: white;
+    }
+
+    /* Section Titles */
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .muted {
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+
+    /* Cards */
+    .card {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      margin-bottom: 16px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    /* Contact Icons */
+    .contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 1rem;
+      margin-right: 20px;
+      transition: 0.25s;
+    }
+
+    .contact a:hover {
+      opacity: 0.7;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="fade">
+      <strong style="font-size: 18px;"></strong>
+      <nav>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#Future Projects">Future Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Profile -->
+    <section class="profile fade">
+      <img src="your-photo.jpg" alt="your-photo">
+
+      <div>
+        <h1>Muhammad Husaam</h1>
+        <h3>IT Support Specialist / Google Certified IT Support Professional</h3>
+
+        <div class="skills-list">
+          <span>Troubleshooting Windows, Linux & macOS </span>
+          <span>Networking ( IP addressing, DNS, DHCP, VPNs )</span>
+          <span>PowerShell Automation</span>
+          <span>System Administration & Active Directory </span>
+          <span>Network Security</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="fade">
+      <h2>Skills</h2>
+      <p class="muted">Core technologies and tools.</p>
+
+      <div class="card">Operating Systems Windows, Linux, macOS troubleshooting</div>
+      <div class="card">Networking IP addressing, DNS, DHCP, VPNs</div>
+      <div class="card">PowerShell Automation</div>
+      <div class="card">Software Troubleshooting Installation, updates, compatibility issues</div>
+      <div class="card">System Administration User accounts, permissions, Active Directory</div>
+      <div class="card">Security Antivirus, firewalls, phishing awareness</div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="fade">
+      <h2>Projects</h2>
+      <p class="muted">Recent work and experiments.</p>
+
+      <div class="card">
+        <h3>AD User Provisioning Script</h3>
+        <p class="muted">Automated user creation with PowerShell.</p>
+      </div>
+
+      <div class="card">
+        <h3>Windows Server Home Lab</h3>
+        <p class="muted">Multi‑VM lab for testing and learning.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="fade">
+      <h2>Contact</h2>
+      <p class="muted">Let’s connect.</p>
+
+      <div class="contact">
+        <a href="mailto:your-email@example.com"><i data-feather="mail"></i>Email</a>
+        <a href="https://github.com/muhammad-husaam" target="_blank"><i data-feather="github"></i>GitHub</a>
+        <a href="https://linkedin.com" target="_blank"><i data-feather="linkedin"></i>LinkedIn</a>
+      </div>
+    </section>
+
+    <footer>© 2026 Muhammad Husaam</footer>
+
+  </div>
+
+  <!-- Activate Icons + Fade Animations -->
+  <script>
+    feather.replace();
+
+    const elements = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
