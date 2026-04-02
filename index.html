@@ -20,6 +20,7 @@
       animation: gradientShift 20s ease infinite;
       color: #1a1a1a;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     @keyframes gradientShift {
@@ -34,29 +35,75 @@
       padding: 50px 20px;
     }
 
-    /* Fade-in animation */
-    .fade { opacity: 0; transform: translateY(20px); transition: 0.8s ease; }
-    .fade.visible { opacity: 1; transform: translateY(0); }
+    /* Fade-in + slide-up animation */
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* Header */
-    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px; }
-    nav a { margin-left: 25px; text-decoration: none; color: #2563ebcc; font-size: 16px; font-weight: 500; transition: 0.3s; }
-    nav a:hover { color: #1e40af; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #2563ebcc;
+      font-size: 16px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #1e40af;
+    }
 
     /* Profile */
-    .profile { display: flex; align-items: center; gap: 30px; margin-bottom: 70px; }
-    .profile img {
-      width: 180px; height: 180px; border-radius: 50%;
-      object-fit: cover; flex-shrink: 0;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 70px;
     }
-    .profile img:hover { transform: scale(1.05); box-shadow: 0 12px 35px rgba(0,0,0,0.25); }
-    .profile h1 { margin: 0; font-size: 2.5rem; font-weight: 700; color: #1e3a8a; }
-    .profile h3 { margin: 15px 0 20px; color: #1e40af; font-weight: 500; font-size: 1.1rem; }
+    .profile img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    .profile img:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+    }
+    .profile h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+    .profile h3 {
+      margin: 15px 0 20px;
+      color: #1e3a8a; /* darker muted */
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
 
     /* Skill Tags */
-    .skills-list { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
     .skills-list span {
       background: rgba(255,255,255,0.7);
       padding: 6px 12px;
@@ -65,34 +112,65 @@
       color: #2563eb;
       border: 1px solid rgba(37,99,235,0.3);
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
     }
-    .skills-list span:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); background: rgba(255,255,255,0.85); }
+    .skills-list span:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      background: rgba(255,255,255,0.85);
+    }
 
     /* Section Titles */
-    h2 { font-size: 1.8rem; margin-bottom: 12px; color: #1e3a8a; }
-    .muted { color: #2563eb; margin-bottom: 20px; }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #1e3a8a;
+    }
+    .muted {
+      color: #1e3a8a; /* darker blue */
+      margin-bottom: 20px;
+    }
 
     /* Cards */
     .card {
-      background: rgba(255,255,255,0.85); padding: 18px; border-radius: 16px; font-size: 1rem;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.1); margin-bottom: 18px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      background: rgba(255,255,255,0.85);
+      padding: 18px;
+      border-radius: 16px;
+      font-size: 1rem;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      margin-bottom: 18px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
       color: #1e3a8a;
       backdrop-filter: blur(8px);
     }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
 
     /* Contact Icons */
     .contact a {
-      display: inline-flex; align-items: center; gap: 10px;
-      text-decoration: none; color: #2563ebcc; font-size: 1.05rem; margin-right: 20px;
-      transition: opacity 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #2563ebcc;
+      font-size: 1.05rem;
+      margin-right: 20px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    .contact a:hover { opacity: 0.8; }
+    .contact a:hover {
+      opacity: 0.85;
+      transform: translateY(-3px) scale(1.05);
+    }
 
     /* Footer */
-    footer { text-align: center; margin-top: 50px; color: #2563ebaa; font-size: 14px; }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #2563ebaa;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -167,10 +245,15 @@
 
 <script>
   feather.replace();
+
   const elements = document.querySelectorAll('.fade');
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-  });
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+      else entry.target.classList.remove('visible'); // animate when scrolling up
+    });
+  }, { threshold: 0.1 });
+
   elements.forEach(el => observer.observe(el));
 </script>
 
