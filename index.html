@@ -10,7 +10,9 @@
   <!-- Font Awesome for modern icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-  <style>
+  <style>html {
+  scroll-behavior: smooth;
+}
     /* White to Light Blue Gradient Background */
     body {
       margin: 0;
@@ -170,28 +172,43 @@
       margin-top: 50px;
       color: #2563ebaa;
       font-size: 14px;
-    }
+    }/* Responsive navigation for smaller screens */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav a {
+    margin: 10px 0;
+  }
+}
   </style>
 </head>
 <body>
 
 <div class="container">
   <!-- Header -->
-  <header class="fade">
-    <nav>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#future-projects">Future Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <header>
+  <nav class="navbar">
+    <!-- Logo / Brand -->
+    <div class="logo"></div>
+
+    <!-- Navigation Links -->
+    <div class="nav-links">
+      <a href="#skills"><i class="fa-solid fa-bolt"></i> Skills</a>
+      <a href="#projects"><i class="fa-solid fa-code"></i> Projects</a>
+      <a href="#future-projects"><i class="fa-solid fa-lightbulb"></i> Future Projects</a>
+      <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+    </div>
+  </nav>
+</header>
 
   <!-- Profile -->
   <section class="profile fade">
-    <img src="logo.png" alt="Muhammad Husaam">
+    <img src="profile.jpg" alt="Muhammad Husaam">
     <div>
       <h1>Muhammad Husaam</h1>
-      <h3>IT Support Specialist / Google Certified IT Support Professional</h3>
+      <h3>IT Support Specialist / Google IT Support Professional Certification</h3>
 
       <div class="skills-list">
         <span><i class="fa-solid fa-desktop"></i> Troubleshooting</span>
@@ -205,38 +222,220 @@
 
   <!-- Skills -->
   <section id="skills" class="fade">
-    <h2>Skills</h2>
-    <p class="muted">Core technologies and tools.</p>
-    <div class="card">Operating Systems Windows, Linux, macOS troubleshooting</div>
-    <div class="card">Networking IP addressing, DNS, DHCP, VPNs</div>
-    <div class="card">PowerShell Automation</div>
-    <div class="card">Software Troubleshooting Installation, updates, compatibility issues</div>
-    <div class="card">System Administration User accounts, permissions, Active Directory</div>
-    <div class="card">Security Antivirus, firewalls, phishing awareness</div>
-  </section>
+  <h2><i class="fa-solid fa-bolt"></i> Skills</h2>
+  <p class="muted">Technical expertise focused on IT support, automation, and system reliability.</p>
+
+  <div class="card">
+    <h3>🖥️ Systems & OS</h3>
+    <p>
+      <i class="fa-brands fa-windows"></i> Windows &nbsp;
+      <i class="fa-brands fa-linux"></i> Linux &nbsp;
+      <i class="fa-brands fa-apple"></i> macOS
+    </p>
+    <p class="muted">Troubleshooting, performance optimization, and system configuration.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌐 Networking</h3>
+    <p>
+      <i class="fa-solid fa-network-wired"></i> TCP/IP &nbsp;
+      <i class="fa-solid fa-globe"></i> DNS & DHCP &nbsp;
+      <i class="fa-solid fa-shield-halved"></i> VPN
+    </p>
+    <p class="muted">Network setup, diagnostics, and connectivity troubleshooting.</p>
+  </div>
+
+  <div class="card">
+    <h3>⚙️ Automation & Scripting</h3>
+    <p>
+      <i class="fa-solid fa-terminal"></i> PowerShell &nbsp;
+      <i class="fa-solid fa-gears"></i> Task Automation
+    </p>
+    <p class="muted">Automating IT workflows to reduce manual effort and improve efficiency.</p>
+  </div>
+
+  <div class="card">
+    <h3>🛠️ System Administration</h3>
+    <p>
+      <i class="fa-solid fa-server"></i> Active Directory &nbsp;
+      <i class="fa-solid fa-user-gear"></i> User Management
+    </p>
+    <p class="muted">Account provisioning, permissions, and domain environment management.</p>
+  </div>
+
+  <div class="card">
+    <h3>🛡️ Security</h3>
+    <p>
+      <i class="fa-solid fa-bug"></i> Vulnerability Scanning &nbsp;
+      <i class="fa-solid fa-lock"></i> Endpoint Security &nbsp;
+      <i class="fa-solid fa-eye"></i> Monitoring
+    </p>
+    <p class="muted">Threat detection, system hardening, and security best practices.</p>
+  </div>
+</section>
 
   <!-- Projects -->
   <section id="projects" class="fade">
-    <h2>Projects</h2>
-    <p class="muted">Recent work and experiments.</p>
-    <div class="card">
-      <h3>AD User Provisioning Script</h3>
-      <p class="muted">Automated user creation with PowerShell.</p>
-    </div>
-    <div class="card">
-      <h3>Windows Server Home Lab</h3>
-      <p class="muted">Multi‑VM lab for testing and learning.</p>
-    </div>
-  </section>
+  <h2><i class="fa-solid fa-code"></i> Projects</h2>
+  <p class="muted">Hands-on projects demonstrating automation, networking, and system administration skills.</p>
 
+  <!-- PowerShell Automation -->
+  <div class="card">
+    <h3>🔧 PowerShell Automation</h3>
+    <ul>
+      <li>
+        <strong>System Health Check (healthcheck.ps1)</strong><br>
+        Monitors CPU, RAM, and disk usage to detect system issues early and improve reliability.
+      </li>
+      <li>
+        <strong>Temp File Cleanup (cleanup.ps1)</strong><br>
+        Automatically removes unnecessary files to free disk space and maintain system performance.
+      </li>
+      <li>
+        <strong>Disk Usage Alert (diskalert.ps1)</strong><br>
+        Sends alerts when disk space is critically low, helping prevent downtime and service disruption.
+      </li>
+      <li>
+        <strong>Bulk User Creation (bulkusers.ps1)</strong><br>
+        Automates Active Directory user creation from CSV files, reducing manual effort and errors.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Networking & Systems -->
+  <div class="card">
+    <h3>🌐 Network & Systems</h3>
+    <ul>
+      <li>
+        <strong>Network Troubleshooting Runbook (network-runbook.md)</strong><br>
+        Structured step-by-step guide to diagnose and resolve common network issues efficiently.
+      </li>
+      <li>
+        <strong>Windows Server 2022 Home Lab (homelab.md)</strong><br>
+        Built and configured Active Directory, DNS, and domain environment to simulate real-world IT infrastructure.
+      </li>
+      <li>
+        <strong>DHCP Server Setup (dhcp-setup.md)</strong><br>
+        Configured automated IP address assignment, ensuring reliable and error-free network connectivity.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Security -->
+  <div class="card">
+    <h3>🛡️ Security & Administration</h3>
+    <ul>
+      <li>
+        <strong>Security Scan Report (security-scan-report.md)</strong><br>
+        Performed Nmap scan on a domain controller to identify open ports and security risks, improving system hardening.
+      </li>
+    </ul>
+  </div>
+</section>
+  <section id="future-projects" class="fade">
+  <h2><i class="fa-solid fa-lightbulb"></i> Future Projects</h2>
+  <p class="muted">Planned projects focused on automation, networking, and cybersecurity in real-world lab environments.</p>
+
+  <!-- IT Automation -->
+  <div class="card">
+    <h3>🔧 IT Automation</h3>
+    <ul>
+      <li>
+        <strong>Automated Software Updates for Bulk Systems</strong><br>
+        Automate patching across multiple machines using scripts, reducing manual update time and improving system security.
+      </li>
+      <li>
+        <strong>Customer Ticket Automation Script</strong><br>
+        Automatically categorize and assign support tickets, reducing response time and improving help desk efficiency.
+      </li>
+      <li>
+        <strong>Support Workflow Integration</strong><br>
+        Integrate scripts with tools like Jira and ServiceNow to streamline IT operations and improve workflow automation.
+      </li>
+      <li>
+        <strong>Ticketing System Simulation (Help Desk)</strong><br>
+        Build a simulated help desk environment to practice ticket handling, escalation, and SLA management.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Networking -->
+  <div class="card">
+    <h3>🌐 Networking</h3>
+    <ul>
+      <li>
+        <strong>Network Connectivity Dashboard</strong><br>
+        Monitor uptime and connectivity of devices in real time, enabling faster detection of network issues.
+      </li>
+      <li>
+        <strong>Automated Bandwidth Monitor</strong><br>
+        Track network usage and generate alerts for high traffic, helping prevent congestion and downtime.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Active Directory -->
+  <div class="card">
+    <h3>👥 Active Directory</h3>
+    <ul>
+      <li>
+        <strong>Dynamic AD Group Management</strong><br>
+        Automatically assign users to groups based on roles, reducing manual administrative tasks and errors.
+      </li>
+      <li>
+        <strong>Automated Password Reset & Notification</strong><br>
+        Detect expired passwords and notify users, reducing account lockouts and help desk workload.
+      </li>
+      <li>
+        <strong>AD Security Audit Automation</strong><br>
+        Identify inactive accounts and privilege risks, improving security and compliance visibility.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Cybersecurity -->
+  <div class="card">
+    <h3>🛡️ Cybersecurity (Kali Linux)</h3>
+    <ul>
+      <li>
+        <strong>Vulnerability Scanning (OpenVAS)</strong><br>
+        Scan systems for known vulnerabilities and generate reports to prioritize security fixes.
+      </li>
+      <li>
+        <strong>Password Cracking Lab (Hydra / John)</strong><br>
+        Simulate password attacks in a lab to understand weaknesses and improve authentication security.
+      </li>
+      <li>
+        <strong>Web Application Testing (Burp Suite)</strong><br>
+        Analyze web applications for common vulnerabilities like XSS and input validation flaws.
+      </li>
+      <li>
+        <strong>Wi-Fi Security Testing</strong><br>
+        Evaluate wireless network security and identify risks such as weak encryption or misconfiguration.
+      </li>
+      <li>
+        <strong>Intrusion Detection (Snort)</strong><br>
+        Monitor network traffic and detect suspicious activity in real time using IDS rules.
+      </li>
+      <li>
+        <strong>SIEM Simulation & Log Analysis</strong><br>
+        Collect and analyze logs to detect anomalies and simulate real-world security monitoring.
+      </li>
+      <li>
+        <strong>Full Home Lab (Kali Linux + Windows)</strong><br>
+        Build a lab to simulate attacks and practice detection and response in a controlled environment.
+      </li>
+    </ul>
+  </div>
+</section>
   <!-- Contact -->
   <section id="contact" class="fade">
     <h2>Contact</h2>
     <p class="muted">Let’s connect.</p>
     <div class="contact">
-      <a href="mailto:muhammadhusaam@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i> Email</a>
       <a href="https://github.com/muhammad-husaam" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/muhammad-husaam/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </div>
   </section>
 
