@@ -181,6 +181,86 @@
   nav a {
     margin: 10px 0;
   }
+}.cta-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.btn.secondary {
+  background: rgba(255,255,255,0.7);
+  color: #2563eb;
+  border: 1px solid rgba(37,99,235,0.3);
+}.cta-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;   /* ⬅️ increase space ABOVE buttons */
+  margin-bottom: 10px; /* ⬅️ space BELOW buttons */
+  flex-wrap: wrap;
+}.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  /* ✅ Add animation */
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+
+.btn.primary:hover {
+  background: #1e40af;
+  transform: translateY(-3px) scale(1.05); /* ⬅️ smooth lift & slight zoom */
+}
+
+.btn.secondary {
+  background: rgba(255,255,255,0.7);
+  color: #2563eb;
+  border: 1px solid rgba(37,99,235,0.3);
+}
+
+.btn.secondary:hover {
+  background: rgba(255,255,255,0.9);
+  transform: translateY(-3px) scale(1.05); /* ⬅️ smooth lift & zoom */
+}.skills-list span {
+  /* Remove animations */
+  transition: none;
+  transform: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* keep the basic shadow */
+  background: rgba(255,255,255,0.7);     /* keep normal background */
+}
+
+.skills-list span:hover {
+  /* Disable hover effect */
+  transform: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.7);
 }
   </style>
 </head>
@@ -190,36 +270,49 @@
   <!-- Header -->
   <header>
   <nav class="navbar">
-    <!-- Logo / Brand -->
-    <div class="logo"></div>
+  <!-- Logo / Brand -->
+  <div class="logo"></div>
 
-    <!-- Navigation Links -->
-    <div class="nav-links">
-      <a href="#skills"><i class="fa-solid fa-bolt"></i> Skills</a>
-      <a href="#projects"><i class="fa-solid fa-code"></i> Projects</a>
-      <a href="#future-projects"><i class="fa-solid fa-lightbulb"></i> Future Projects</a>
-      <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
-    </div>
-  </nav>
+  <!-- Navigation Buttons -->
+  <div class="nav-buttons">
+    <a href="#skills" class="btn primary"><i class="fa-solid fa-bolt"></i> Skills</a>
+    <a href="#projects" class="btn primary"><i class="fa-solid fa-code"></i> Projects</a>
+    <a href="#future-projects" class="btn primary"><i class="fa-solid fa-lightbulb"></i> Future Projects</a>
+    <a href="#contact" class="btn primary"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </div>
+</nav>
 </header>
 
   <!-- Profile -->
-  <section class="profile fade">
-    <img src="husaam.png" alt="Muhammad Husaam">
-    <div>
-      <h1>Muhammad Husaam</h1>
-      <h3>IT Support Specialist / Google IT Support Professional Certification</h3>
+  <!-- Profile -->
+<section class="profile fade">
+  <img src="husaam.png" alt="Muhammad Husaam">
+  <div>
+    <h1>Muhammad Husaam</h1>
+    <h3>IT Support Specialist / Google IT Support Professional Certification</h3>
 
-      <div class="skills-list">
-        <span><i class="fa-solid fa-desktop"></i> Troubleshooting</span>
-        <span><i class="fa-solid fa-network-wired"></i> Networking</span>
-        <span><i class="fa-solid fa-terminal"></i> PowerShell</span>
-        <span><i class="fa-solid fa-server"></i> System Admin</span>
-        <span><i class="fa-solid fa-shield-halved"></i> Security</span>
-      </div>
+    <!-- NEW DESCRIPTION ADDED -->
+    <p class="intro-text">
+  IT Support professional with experience in troubleshooting hardware/software issues, assisting users, and maintaining system performance. Skilled in diagnosing problems, resolving incidents, and ensuring smooth IT operations.
+</p>
+<div class="cta-buttons">
+  <a href="Muhammad_Husaam_CV.pdf" download class="btn primary">
+    <i class="fa-solid fa-download"></i> Download CV
+  </a>
+
+  <a href="mailto:your-email@example.com" class="btn secondary">
+    <i class="fa-solid fa-paper-plane"></i> Hire Me
+  </a>
+</div>
+    <div class="skills-list">
+      <span><i class="fa-solid fa-desktop"></i> Troubleshooting</span>
+      <span><i class="fa-solid fa-network-wired"></i> Networking</span>
+      <span><i class="fa-solid fa-terminal"></i> PowerShell</span>
+      <span><i class="fa-solid fa-server"></i> System Admin</span>
+      <span><i class="fa-solid fa-shield-halved"></i> Security</span>
     </div>
-  </section>
-
+  </div>
+</section>
   <!-- Skills -->
   <section id="skills" class="fade">
   <h2><i class="fa-solid fa-bolt"></i> Skills</h2>
@@ -434,7 +527,7 @@
     <p class="muted">Let’s connect.</p>
     <div class="contact">
       <a href="mailto:muhammadhusaam@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-      <a href="https://github.com/muhammad-husaam/My-Portfolio" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://github.com/muhammad-husaam" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
       <a href="https://www.linkedin.com/in/muhammad-husaam/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </div>
   </section>
