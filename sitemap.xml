@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://muhammad-husaam.github.io/</loc>
+  </url>
+
+  <!-- Skills Section -->
+  <url>
+    <loc>https://muhammad-husaam.github.io/#skills</loc>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://muhammad-husaam.github.io/#projects</loc>
+  </url>
+
+  <!-- Individual Project Pages -->
+  <url>
+    <loc>https://muhammad-husaam.github.io/powershell-automation.html</loc>
+  </url>
+  <url>
+    <loc>https://muhammad-husaam.github.io/networking-project.html</loc>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://muhammad-husaam.github.io/#contact</loc>
+  </url>
+
+</urlset>
