@@ -261,6 +261,18 @@
   transform: none;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   background: rgba(255,255,255,0.7);
+}.nav-buttons .btn.secondary {
+  background: rgba(255, 255, 255, 0.1); /* transparent */
+  color: #2563eb;                       /* text color */
+  border: 1px solid rgba(37, 99, 235, 0.5); /* blue border */
+  box-shadow: none;                     /* no shadow */
+  transition: all 0.3s ease;
+}
+
+.nav-buttons .btn.secondary:hover {
+  background: rgba(37, 99, 235, 0.1); /* subtle hover highlight */
+  transform: translateY(-3px) scale(1.05); /* same hover lift effect */
+  color: #2563eb;                     /* keep text color same */
 }
   </style>
 </head>
@@ -275,10 +287,10 @@
 
   <!-- Navigation Buttons -->
   <div class="nav-buttons">
-    <a href="#skills" class="btn primary"><i class="fa-solid fa-bolt"></i> Skills</a>
-    <a href="#projects" class="btn primary"><i class="fa-solid fa-code"></i> Projects</a>
-    <a href="#future-projects" class="btn primary"><i class="fa-solid fa-lightbulb"></i> Future Projects</a>
-    <a href="#contact" class="btn primary"><i class="fa-solid fa-envelope"></i> Contact</a>
+    <a href="#skills" class="btn secondary"><i class="fa-solid fa-bolt"></i> Skills</a>
+    <a href="#projects" class="btn secondary"><i class="fa-solid fa-code"></i> Projects</a>
+    <a href="#future-projects" class="btn secondary"><i class="fa-solid fa-lightbulb"></i> Future Projects</a>
+    <a href="#contact" class="btn secondary"><i class="fa-solid fa-envelope"></i> Contact</a>
   </div>
 </nav>
 </header>
@@ -300,7 +312,7 @@
     <i class="fa-solid fa-download"></i> Download CV
   </a>
 
-  <a href="mailto:your-email@example.com" class="btn secondary">
+  <a href="mailto:muhammadhusaam@gmail.com" class="btn secondary">
     <i class="fa-solid fa-paper-plane"></i> Hire Me
   </a>
 </div>
@@ -526,9 +538,9 @@
     <h2>Contact</h2>
     <p class="muted">Let’s connect.</p>
     <div class="contact">
-      <a href="mailto:muhammadhusaam@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="mailto:your-email@example.com"><i class="fa-solid fa-envelope"></i> Email</a>
       <a href="https://github.com/muhammad-husaam" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/muhammad-husaam/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </div>
   </section>
 
