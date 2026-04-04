@@ -281,6 +281,17 @@
   background: rgba(37, 99, 235, 0.1); /* subtle hover highlight */
   transform: translateY(-3px) scale(1.05); /* same hover lift effect */
   color: #2563eb;                     /* keep text color same */
+}.cert-link {
+  color: #1e3a8a; /* same as your text */
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.cert-link:hover {
+  color: #2563eb; /* brighter blue on hover */
+  border-bottom: 1px solid #2563eb; /* subtle underline animation */
 }
   </style>
 </head>
@@ -309,10 +320,15 @@
   <img src="husaam.png" alt="Muhammad Husaam">
   <div>
     <h1>Muhammad Husaam</h1>
-    <h3>IT Support Specialist | Google IT Support Professional Certification | Troubleshooting | Hardware & Software Support | Networking</h3>
+    <h3>
+  IT Support Specialist | 
+  <a href="https://www.coursera.org/account/accomplishments/professional-cert/NKNSMRVBKC5I" target="_blank" class="cert-link">
+    Google IT Support Professional Certification <i class="fa-solid fa-arrow-up-right-from-square"></i>
+  </a> 
+  | Troubleshooting | Hardware & Software Support | Networking | CompTIA A+ (In Progress)
+</h3>
 <p class="muted">
 IT Support Specialist with hands-on experience resolving hardware and software issues, managing Active Directory environments, and automating administrative tasks using PowerShell. Proven ability to diagnose system and network problems, support end users, and improve system reliability through proactive monitoring and scripting.
-</p>
 <div class="cta-buttons">
   <a href="Muhammad_Husaam_CV.pdf" download class="btn primary">
     <i class="fa-solid fa-download"></i> Download CV
@@ -384,6 +400,21 @@ IT Support Specialist with hands-on experience resolving hardware and software i
     <p class="muted">Threat detection, system hardening, and security best practices.</p>
   </div>
 </section>
+<section id="tools" class="fade">
+  <h2><i class="fa-solid fa-wrench"></i> Tools & Platforms</h2>
+  <p class="muted">Key tools I use daily for IT support, automation, and cybersecurity.</p>
+
+  <div class="skills-list">
+    <span><i class="fa-brands fa-windows"></i> Windows Admin Tools</span>
+    <span><i class="fa-brands fa-linux"></i> Linux CLI / Terminal</span>
+    <span><i class="fa-solid fa-server"></i> Active Directory</span>
+    <span><i class="fa-solid fa-network-wired"></i> Wireshark</span>
+    <span><i class="fa-solid fa-shield-halved"></i> OpenVAS / Vulnerability Scanning</span>
+    <span><i class="fa-solid fa-terminal"></i> PowerShell / Scripting</span>
+    <span><i class="fa-solid fa-envelope"></i> Ticketing Tools (Jira / ServiceNow)</span>
+    <span><i class="fa-solid fa-lock"></i> Endpoint Security Tools</span>
+  </div>
+</section>
 
   <!-- Projects -->
   <section id="projects" class="fade">
@@ -443,96 +474,36 @@ IT Support Specialist with hands-on experience resolving hardware and software i
 </section>
   <section id="future-projects" class="fade">
   <h2><i class="fa-solid fa-lightbulb"></i> Future Projects</h2>
-  <p class="muted">Planned projects focused on automation, networking, and cybersecurity in real-world lab environments.</p>
+  <p class="muted">Focused projects to strengthen real-world IT support, automation, and security skills.</p>
 
-  <!-- IT Automation -->
   <div class="card">
-    <h3>🔧 IT Automation</h3>
     <ul>
       <li>
-        <strong>Automated Software Updates for Bulk Systems</strong><br>
-        Automate patching across multiple machines using scripts, reducing manual update time and improving system security.
+        <strong>🎫 Ticketing System Simulation</strong><br>
+        Simulate a help desk environment to practice ticket handling, escalation, and SLA management.
       </li>
-      <li>
-        <strong>Customer Ticket Automation Script</strong><br>
-        Automatically categorize and assign support tickets, reducing response time and improving help desk efficiency.
-      </li>
-      <li>
-        <strong>Support Workflow Integration</strong><br>
-        Integrate scripts with tools like Jira and ServiceNow to streamline IT operations and improve workflow automation.
-      </li>
-      <li>
-        <strong>Ticketing System Simulation (Help Desk)</strong><br>
-        Build a simulated help desk environment to practice ticket handling, escalation, and SLA management.
-      </li>
-    </ul>
-  </div>
 
-  <!-- Networking -->
-  <div class="card">
-    <h3>🌐 Networking</h3>
-    <ul>
       <li>
-        <strong>Network Connectivity Dashboard</strong><br>
-        Monitor uptime and connectivity of devices in real time, enabling faster detection of network issues.
+        <strong>👥 Active Directory Automation</strong><br>
+        Automate user provisioning, group management, and password resets using PowerShell.
       </li>
-      <li>
-        <strong>Automated Bandwidth Monitor</strong><br>
-        Track network usage and generate alerts for high traffic, helping prevent congestion and downtime.
-      </li>
-    </ul>
-  </div>
 
-  <!-- Active Directory -->
-  <div class="card">
-    <h3>👥 Active Directory</h3>
-    <ul>
       <li>
-        <strong>Dynamic AD Group Management</strong><br>
-        Automatically assign users to groups based on roles, reducing manual administrative tasks and errors.
-      </li>
-      <li>
-        <strong>Automated Password Reset & Notification</strong><br>
-        Detect expired passwords and notify users, reducing account lockouts and help desk workload.
-      </li>
-      <li>
-        <strong>AD Security Audit Automation</strong><br>
-        Identify inactive accounts and privilege risks, improving security and compliance visibility.
-      </li>
-    </ul>
-  </div>
-
-  <!-- Cybersecurity -->
-  <div class="card">
-    <h3>🛡️ Cybersecurity (Kali Linux)</h3>
-    <ul>
-      <li>
-        <strong>Vulnerability Scanning (OpenVAS)</strong><br>
-        Scan systems for known vulnerabilities and generate reports to prioritize security fixes.
-      </li>
-      <li>
-        <strong>Password Cracking Lab (Hydra / John)</strong><br>
-        Simulate password attacks in a lab to understand weaknesses and improve authentication security.
-      </li>
-      <li>
-        <strong>Web Application Testing (Burp Suite)</strong><br>
-        Analyze web applications for common vulnerabilities like XSS and input validation flaws.
-      </li>
-      <li>
-        <strong>Wi-Fi Security Testing</strong><br>
-        Evaluate wireless network security and identify risks such as weak encryption or misconfiguration.
-      </li>
-      <li>
-        <strong>Intrusion Detection (Snort)</strong><br>
-        Monitor network traffic and detect suspicious activity in real time using IDS rules.
-      </li>
-      <li>
-        <strong>SIEM Simulation & Log Analysis</strong><br>
+        <strong>📊 SIEM & Log Analysis</strong><br>
         Collect and analyze logs to detect anomalies and simulate real-world security monitoring.
       </li>
+
       <li>
-        <strong>Full Home Lab (Kali Linux + Windows)</strong><br>
-        Build a lab to simulate attacks and practice detection and response in a controlled environment.
+        <strong>🔄 Patch Management Automation</strong><br>
+        Automate system updates across multiple machines to improve security and reduce manual effort.
+      </li>
+
+      <li>
+        <strong>🌐 Network Monitoring Dashboard</strong><br>
+        Track device uptime and connectivity to quickly identify and resolve network issues.
+      </li>
+        <strong>🛡️ Cybersecurity Lab (Kali Linux)</strong><br>
+        Perform vulnerability scanning and basic penetration testing in a controlled lab environment.
       </li>
     </ul>
   </div>
@@ -542,7 +513,7 @@ IT Support Specialist with hands-on experience resolving hardware and software i
     <h2>Contact</h2>
     <p class="muted">Let’s connect.</p>
     <div class="contact">
-      <a href="mailto:muhammadhusaam@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+      <a href="muhammadhusaam@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
       <a href="https://github.com/muhammad-husaam" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
       <a href="https://www.linkedin.com/in/muhammad-husaam/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </div>
