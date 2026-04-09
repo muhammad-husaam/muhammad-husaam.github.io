@@ -364,7 +364,19 @@
       .nav-buttons .btn span.label {
         display: none;
       }
-    }
+    }.info-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.info-bar span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
   </style>
 </head>
 
@@ -388,7 +400,11 @@
     <img src="husaam.png" alt="Muhammad Husaam">
     <div class="profile-text">
       <h1>Muhammad Husaam</h1>
-      <h3>
+    <p class="muted" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+  <span><i class="fa-solid fa-location-dot" style="color:#2563eb;"></i> <strong>Saudi Arabia</strong></span>
+  <span><i class="fa-solid fa-briefcase" style="color:#2563eb;"></i> Open to Work</span>
+  <span><i class="fa-solid fa-laptop" style="color:#2563eb;"></i> Remote / On-site</span>
+</p>
         IT Support Specialist |
         <a href="https://www.coursera.org/account/accomplishments/professional-cert/NKNSMRVBKC5I"
            target="_blank" class="cert-link">
@@ -396,12 +412,7 @@
         </a>
         | Networking | CompTIA A+ (In Progress)
       </h3>
-      <p class="muted">
-        IT Support Specialist with hands-on experience resolving hardware and software issues,
-        managing Active Directory environments, and automating administrative tasks using PowerShell.
-        Proven ability to diagnose system and network problems, support end users, and improve system
-        reliability through proactive monitoring and scripting.
-      </p>
+      <p class="muted info-bar">
 
       <div class="cta-buttons">
         <a href="Muhammad_Husaam_CV.pdf" download class="btn primary">
