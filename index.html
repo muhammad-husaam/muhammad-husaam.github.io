@@ -56,20 +56,48 @@
     }
 
     .navbar {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  padding: 10px 16px;
+  margin-bottom: 20px;
+
+  /* 🔥 Navbar when scrolling */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 14px;
+
+  /* Smooth transition */
+  transition: all 0.3s ease;
+}
+.navbar {
+  border: 1px solid rgba(255,255,255,0.3);
+}
     .nav-buttons {
       display: flex;
       flex-wrap: wrap;           /* ✅ wrap on small screens */
       gap: 8px;
       justify-content: flex-end;
     }
-
+.nav-buttons .btn {
+  backdrop-filter: blur(6px);
+}
     /* ── Buttons ──────────────────────────────────────────────────── */
     .btn {
       display: inline-flex;
@@ -381,6 +409,8 @@
   align-items: center;
   gap: 6px;
 }section {
+  position: relative;  /* ✅ ADD THIS LINE */
+
   margin-bottom: 50px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -421,6 +451,25 @@ body::after {
   background: rgba(59,130,246,0.15);
   filter: blur(120px);
   z-index: -1;
+}/* ✨ Section highlight effect */
+section {
+  transition: all 0.4s ease;
+}
+
+/* Active section */
+section.active-section {
+  transform: scale(1.01);
+}
+
+/* Subtle glow background */
+section.active-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: rgba(37, 99, 235, 0.05);
+  pointer-events: none;
+  z-index: -1;
 }
   </style>
 </head>
@@ -432,11 +481,15 @@ body::after {
   <header>
     <nav class="navbar">
       <div class="nav-buttons">
-        <a href="#skills"          class="btn secondary"><i class="fa-solid fa-bolt"></i> Skills</a>
-        <a href="#projects"        class="btn secondary"><i class="fa-solid fa-code"></i> Projects</a>
-        <a href="#future-projects" class="btn secondary"><i class="fa-solid fa-lightbulb"></i> Future</a>
-        <a href="#contact"         class="btn primary"  ><i class="fa-solid fa-envelope"></i> Contact</a>
-      </div>
+  <a href="#skills"          class="btn secondary"><i class="fa-solid fa-bolt"></i> Skills</a>
+  
+  <!-- ✅ NEW EXPERIENCE BUTTON -->
+  <a href="#experience"      class="btn secondary"><i class="fa-solid fa-briefcase"></i> Experience</a>
+  
+  <a href="#projects"        class="btn secondary"><i class="fa-solid fa-code"></i> Projects</a>
+  <a href="#future-projects" class="btn secondary"><i class="fa-solid fa-lightbulb"></i> Future</a>
+  <a href="#contact"         class="btn primary"><i class="fa-solid fa-envelope"></i> Contact</a>
+</div>
     </nav>
   </header>
 
@@ -546,7 +599,46 @@ Passionate about solving technical problems, optimizing workflows, and strengthe
       <span><i class="fa-solid fa-desktop"></i> VMware Workstation</span>
     </div>
   </section>
+<section id="experience" class="fade">
+  <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+  <p class="muted">Hands-on IT support experience through labs, simulations, and real-world scenarios.</p>
 
+  <div class="card">
+    <h3>💻 IT Support Specialist (Lab Experience)</h3>
+    <p class="muted">Self-directed | 2025 – Present</p>
+    <ul>
+      <li>Provided technical support in a simulated help desk environment, diagnosing and resolving hardware, software, and network issues.</li>
+      <li>Configured and managed <strong>Active Directory</strong>, including user account creation, group policies, and permissions.</li>
+      <li>Troubleshot Windows and Linux systems, resolving OS-level issues, performance bottlenecks, and application errors.</li>
+      <li>Performed network diagnostics using tools like <strong>ping, ipconfig, tracert</strong>, and Wireshark to identify connectivity problems.</li>
+      <li>Automated administrative tasks using <strong>PowerShell scripts</strong>, reducing manual workload and improving efficiency.</li>
+      <li>Implemented basic security practices, including vulnerability scanning with <strong>Nmap</strong> and system hardening techniques.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🖥️ Windows Server & Network Administration Lab</h3>
+    <p class="muted">Home Lab Project | 2025</p>
+    <ul>
+      <li>Built and configured a <strong>Windows Server 2022</strong> environment with Active Directory, DNS, and DHCP services.</li>
+      <li>Managed domain users, enforced group policies, and simulated enterprise-level IT infrastructure.</li>
+      <li>Deployed and tested DHCP configurations to ensure reliable IP address allocation across devices.</li>
+      <li>Monitored and troubleshot network performance and system logs to maintain system reliability.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🛡️ Cybersecurity & System Monitoring Lab</h3>
+    <p class="muted">Security Practice | 2025</p>
+    <ul>
+      <li>Conducted network scans using <strong>Nmap</strong>, identifying open ports and potential vulnerabilities.</li>
+      <li>Analyzed scan results and documented findings with actionable security recommendations.</li>
+      <li>Simulated basic threat detection and monitoring workflows to understand security operations.</li>
+      <li>Applied system hardening techniques to reduce attack surface and improve endpoint security.</li>
+    </ul>
+  </div>
+
+</section>
   <!-- ── Projects ─────────────────────────────────────────────────── -->
   <section id="projects" class="fade">
     <h2><i class="fa-solid fa-code"></i> Projects & Lab Work</h2>
@@ -639,6 +731,15 @@ Passionate about solving technical problems, optimizing workflows, and strengthe
     });
   }, { threshold: 0.1 });
   elements.forEach(el => observer.observe(el));
+  const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 10) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+});
 </script>
 
 </body>
