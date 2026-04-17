@@ -1,1 +1,75 @@
+<!-- ================= GLOBAL BLOG STYLE (USE IN ALL PAGES) ================= -->
+  h1 {
+    color: #1e3a8a;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    color: #2563eb;
+    margin-top: 24px;
+  }
+
+  p {
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.9);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+  }
+
+  .back:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<!-- ================= BLOG PAGE 1 ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>How to Troubleshoot Network Issues | IT Support Guide</title>
+<meta name="description" content="Learn how to troubleshoot network issues step-by-step using ping, ipconfig, DNS, and tracert.">
+</head>
+<body>
+<div class="container">
+<a href="/index.html" class="back">← Back to Portfolio</a>
+<div class="card">
+<h1>How to Troubleshoot Network Issues</h1>
+<p>This guide explains how IT Support Specialists diagnose network problems.</p>
+<h2>Check Physical Connections</h2>
+<p>Ensure cables and Wi-Fi are working.</p>
+<h2>Check IP Address</h2>
+<pre>ipconfig</pre>
+<h2>Ping Gateway</h2>
+<pre>ping 192.168.1.1</pre>
+<h2>Test DNS</h2>
+<pre>ping google.com</pre>
+<h2>Trace Route</h2>
+<pre>tracert google.com</pre>
+</div>
+</div>
+</body>
+</html>
 
