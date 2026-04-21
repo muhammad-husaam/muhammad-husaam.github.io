@@ -498,6 +498,82 @@ section.active-section::before {
 
 .highlight-cert:hover {
   background: rgba(37,99,235,0.2);
+}/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+/* ===== DROPDOWN CLEAN VERSION ===== */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+  padding: 8px;
+  min-width: 160px;
+  z-index: 1000;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition: all 0.3s ease;
+}
+
+/* Links inside dropdown */
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #2563eb;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(37,99,235,0.1);
+}
+
+/* Show dropdown */
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #2563eb;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(37,99,235,0.1);
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
   </style>
 </head>
@@ -516,6 +592,18 @@ section.active-section::before {
   
   <a href="#projects"        class="btn secondary"><i class="fa-solid fa-code"></i> Projects</a>
   <a href="#future-projects" class="btn secondary"><i class="fa-solid fa-lightbulb"></i> Future</a>
+  <div class="dropdown">
+  <a href="#research" class="btn secondary">
+    <i class="fa-solid fa-book"></i> Research / Publications
+  </a>
+
+ <div class="dropdown-menu">
+  <a href="research.html" target="_blank">
+  <span style="color: #16a34a; font-weight: 600;">(In Progress...)</span>
+  PowerShell-Based Intrusion Detection
+</a>
+</div>
+</div>
   <a href="#contact"         class="btn primary"><i class="fa-solid fa-envelope"></i> Contact</a>
 </div>
     </nav>
@@ -769,6 +857,34 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("scrolled");
   }
 });
+/* ===== SAFE DROPDOWN JS ===== */
+
+const researchBtn = document.getElementById("researchBtn");
+
+if (researchBtn) {
+  const dropdown = researchBtn.closest(".dropdown");
+  let isOpen = false;
+
+  researchBtn.addEventListener("click", function (e) {
+    if (window.innerWidth <= 768) {
+      if (!isOpen) {
+        e.preventDefault();
+        dropdown.classList.add("active");
+        isOpen = true;
+      } else {
+        dropdown.classList.remove("active");
+        isOpen = false;
+      }
+    }
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("active");
+      isOpen = false;
+    }
+  });
+}
 </script>
 
 </body>
