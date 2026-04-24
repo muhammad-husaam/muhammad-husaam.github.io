@@ -512,7 +512,7 @@ section.active-section::before {
 
 .dropdown-menu {
   position: absolute;
-  top: 110%;
+  top: 100%;
   right: 0;
 
   background: rgba(255, 255, 255, 0.9);
@@ -524,6 +524,7 @@ section.active-section::before {
   padding: 8px;
   min-width: 160px;
   z-index: 1000;
+
 
   /* Animation */
   opacity: 0;
@@ -593,7 +594,7 @@ section.active-section::before {
   <a href="#projects"        class="btn secondary"><i class="fa-solid fa-code"></i> Projects</a>
   <a href="#future-projects" class="btn secondary"><i class="fa-solid fa-lightbulb"></i> Future</a>
   <div class="dropdown">
-  <a href="#research" class="btn secondary">
+  <a href="#research" id="researchBtn" class="btn secondary">
     <i class="fa-solid fa-book"></i> Research / Publications
   </a>
 
